@@ -180,15 +180,7 @@ Sebagai metrik evaluasi, digunakan Root Mean Squared Error (RMSE) untuk mengukur
 
 ### Formula
 
-\[
-\text{RMSE} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} \left( y_i - \hat{y}_i \right)^2}
-\]
-
-**Keterangan:**
-- \( y_i \): rating aktual dari pengguna  
-- \( \hat{y}_i \): rating yang diprediksi oleh model  
-- \( n \): jumlah total prediksi
-
+RMSE = sqrt( (1/n) * sum( (y_i - y_hat_i)^2 ) )
 
 Semakin kecil nilai RMSE, maka semakin dekat prediksi model dengan nilai aktual. Model dilatih menggunakan `BinaryCrossentropy` sebagai fungsi loss, namun untuk evaluasi, digunakan **RMSE** sebagai metrik tambahan untuk mengetahui seberapa akurat model memprediksi rating terhadap data validasi.
 
