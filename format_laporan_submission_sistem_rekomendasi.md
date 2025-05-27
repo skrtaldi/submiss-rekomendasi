@@ -197,6 +197,6 @@ Epoch | Loss (Train) | RMSE (Train) | Val Loss | RMSE (Val) |
 Training RMSE sebesar 0.1229 menunjukkan bahwa model mampu mempelajari pola data dengan cukup baik dalam 1 epoch pelatihan. Validation RMSE sebesar 0.1116 menunjukkan generalisasi model terhadap data yang belum pernah dilihat cukup baik, dengan error prediksi yang relatif rendah.
 
 ## Referensi
-[^1] Ardiansyah, R., Ari Bianto, M., & Saputra, B. D. (2023). Sistem Rekomendasi Buku Perpustakaan Sekolah menggunakan Metode Content-Based Filtering. Jurnal CoSciTech (Computer Science and Information Technology), 4(2), 510-518.
-[^2] AE Wijaya, D Alfian - Jurnal Computech & Bisnis, 2018 - academia.edu
-[^3]Larasati, F. B. A., & Februariyanti, H. (2021). SISTEM REKOMENDASI PRODUCT EMINA COSMETICS DENGAN MENGGUNAKAN METODE CONTENT - BASED FILTERING. Jurnal Manajemen Informatika Dan Sistem Informasi, 4(1), 45–54.
+- [^1] Ardiansyah, R., Ari Bianto, M., & Saputra, B. D. (2023). Sistem Rekomendasi Buku Perpustakaan Sekolah menggunakan Metode Content-Based Filtering. Jurnal CoSciTech (Computer Science and Information Technology), 4(2), 510-518.
+- [^2] AE Wijaya, D Alfian - Jurnal Computech & Bisnis, 2018 - academia.edu
+- [^3]Larasati, F. B. A., & Februariyanti, H. (2021). SISTEM REKOMENDASI PRODUCT EMINA COSMETICS DENGAN MENGGUNAKAN METODE CONTENT - BASED FILTERING. Jurnal Manajemen Informatika Dan Sistem Informasi, 4(1), 45–54.
