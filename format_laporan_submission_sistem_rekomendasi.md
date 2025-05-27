@@ -119,39 +119,76 @@ Model sistem rekomendasi tahap ini dibangun menggunakan pendekatan deep learning
 
 Sistem ini memanfaatkan data interaksi pengguna dan anime dalam bentuk rating, kemudian menghitung kemiripan antar pengguna untuk memberikan rekomendasi berdasarkan pola perilaku yang serupa. Top-N anime yang ditampilkan merupakan hasil dari prediksi preferensi pengguna berdasarkan kesamaan dengan pengguna atau anime lain. Kelebihan pendekatn ini adalah kemampuannya menemukan rekomendasia yang lebih bergam dan tidak terbatas pada konten serupa. Namun kelemhan utam metode ini adalah ketergantungannya pada data interaksi yang cukup besar. Jika terdapat pengguna atau item baru yang belum memiliki riwayat interaksi, sistem ini akan mengalami kesulitan memberikan rekomendasi yang akurat(cold-start).
 
-Showing recommendations for users: 8643
-===========================
-Anime with high ratings from user
---------------------------------
-Naruto : Action Comedy Martial Arts Shounen Super Power
-SteinsGate Movie Fuka Ryouiki no Dj vu : Sci-Fi Thriller
-Mirai Nikki TV : Action Mystery Psychological Shounen Supernatural Thriller
-Bakemonogatari : Mystery Romance Supernatural Vampire
-Suzumiya Haruhi no Shoushitsu : Comedy Mystery Romance School Sci-Fi Supernatural
---------------------------------
-Top 10 anime recommendation
---------------------------------
-Fullmetal Alchemist Brotherhood : Action Adventure Drama Fantasy Magic Military Shounen
-Gintama : Action Comedy Historical Parody Samurai Sci-Fi Shounen
-Gintama039 : Action Comedy Historical Parody Samurai Sci-Fi Shounen
-Gintama Movie Kanketsuhen Yorozuya yo Eien Nare : Action Comedy Historical Parody Samurai Sci-Fi Shounen
-Gintama039 Enchousen : Action Comedy Historical Parody Samurai Sci-Fi Shounen
-Hunter x Hunter 2011 : Action Adventure Shounen Super Power
-Rurouni Kenshin Meiji Kenkaku Romantan Tsuiokuhen : Action Drama Historical Martial Arts Romance Samurai
-Haikyuu Karasuno Koukou VS Shiratorizawa Gakuen Koukou : Comedy Drama School Shounen Sports
-Gintama : Action Comedy Historical Parody Samurai Sci-Fi Shounen
-Ginga Eiyuu Densetsu : Drama Military Sci-Fi Space
+## Showing Recommendations for User: 8643
+
+## Anime with High Ratings from User
+Berikut adalah daftar anime yang mendapatkan rating tinggi dari pengguna:
+
+- **Naruto**  
+  *Genres:* Action, Comedy, Martial Arts, Shounen, Super Power
+
+- **Steins;Gate Movie: Fuka Ryouiki no Déjà vu**  
+  *Genres:* Sci-Fi, Thriller
+
+- **Mirai Nikki (TV)**  
+  *Genres:* Action, Mystery, Psychological, Shounen, Supernatural, Thriller
+
+- **Bakemonogatari**  
+  *Genres:* Mystery, Romance, Supernatural, Vampire
+
+- **Suzumiya Haruhi no Shoushitsu**  
+  *Genres:* Comedy, Mystery, Romance, School, Sci-Fi, Supernatural
+
+---
+
+## Top 10 Anime Recommendations
+Berikut adalah rekomendasi anime terbaik untuk pengguna:
+
+1. **Fullmetal Alchemist: Brotherhood**  
+   *Genres:* Action, Adventure, Drama, Fantasy, Magic, Military, Shounen
+
+2. **Gintama**  
+   *Genres:* Action, Comedy, Historical, Parody, Samurai, Sci-Fi, Shounen
+
+3. **Gintama°**  
+   *Genres:* Action, Comedy, Historical, Parody, Samurai, Sci-Fi, Shounen
+
+4. **Gintama Movie: Kanketsu-hen - Yorozuya yo Eien Nare**  
+   *Genres:* Action, Comedy, Historical, Parody, Samurai, Sci-Fi, Shounen
+
+5. **Gintama°: Enchousen**  
+   *Genres:* Action, Comedy, Historical, Parody, Samurai, Sci-Fi, Shounen
+
+6. **Hunter x Hunter (2011)**  
+   *Genres:* Action, Adventure, Shounen, Super Power
+
+7. **Rurouni Kenshin: Meiji Kenkaku Romantan - Tsuiokuhen**  
+   *Genres:* Action, Drama, Historical, Martial Arts, Romance, Samurai
+
+8. **Haikyuu!!: Karasuno Koukou VS Shiratorizawa Gakuen Koukou**  
+   *Genres:* Comedy, Drama, School, Shounen, Sports
+
+9. **Gintama**  
+   *Genres:* Action, Comedy, Historical, Parody, Samurai, Sci-Fi, Shounen
+
+10. **Ginga Eiyuu Densetsu**  
+    *Genres:* Drama, Military, Sci-Fi, Space
 
 ## Evaluation
 
 Sebagai metrik evaluasi, digunakan Root Mean Squared Error (RMSE) untuk mengukur sejauh mana prediksi model mendekati nilai target dalam skala aslinya. Model kemudian dilatih menggunakan data latih x_train dan y_train dengan batch size 8 selama 1 epoch, dan divalidasi menggunakan data x_val dan y_val. Meskipun hanya dilakukan pelatihan selama satu epoch untuk tahap awal, proses ini bertujuan untuk mengevaluasi kinerja awal model dan memastikan bahwa arsitektur dan pipeline pelatihan telah berjalan dengan benar sebelum melakukan pelatihan lebih lanjut. **Root Mean Squared Error (RMSE)** mengukur seberapa besar rata-rata kesalahan antara nilai yang diprediksi oleh model dan nilai aktual. RMSE memberikan penalti lebih besar untuk kesalahan prediksi yang besar karena penggunaan kuadrat dari selisih.
 
-### 📐 Formula:
-[\RMSE = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2}\]
+### Formula
+
+\[
+\text{RMSE} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} \left( y_i - \hat{y}_i \right)^2}
+\]
+
 **Keterangan:**
-- \( y_i \): rating aktual dari pengguna
-- \( \hat{y}_i \): rating yang diprediksi oleh model
+- \( y_i \): rating aktual dari pengguna  
+- \( \hat{y}_i \): rating yang diprediksi oleh model  
 - \( n \): jumlah total prediksi
+
 
 Semakin kecil nilai RMSE, maka semakin dekat prediksi model dengan nilai aktual. Model dilatih menggunakan `BinaryCrossentropy` sebagai fungsi loss, namun untuk evaluasi, digunakan **RMSE** sebagai metrik tambahan untuk mengetahui seberapa akurat model memprediksi rating terhadap data validasi.
 
