@@ -66,7 +66,7 @@ Pada dataset rating.csv, terdapat sebanyak 1.476.596 baris data dengan nilai rat
 ### Menangani Missing Values
 Beberapa entri pada kolom name dan genre pada dataframe memiliki nilai kosong. Untuk keperluan cntent-based filtering nilai kosong tersebut dihapus karena jumlahnya tidak terlalu banyak. Proses ini dilakukan untuk menjaminkualitas data sebelum dilakukan tahap modelling.
 ### Menangani Koma dalam kolom Genre
-Kolom genre berisi beberapa genre yang digabung dalam satu string dan dipisahkan dengan koma. Dalam pendekatan content-based filtering, informasi genre digunakan untuk mengukur kemiripan antar anime. Oleh karena itu, kolom genre perlu dipersiapkan agar bisa diubah menjadi representasi numerik melalui teknik vektorisasi seperti TF-IDF. Sehingga nantinya, dapat digunakan untuk menyusun sistem rekomendasi berdasarkan kemiripan genre.
+Kolom genre berisi beberapa genre yang digabung dalam satu string dan dipisahkan dengan koma. Tanda koma dI replace dengan spasi kosong. Hal ini perlu dilakukan dalam pendekatan content-based filtering, informasi genre digunakan untuk mengukur kemiripan antar anime. Oleh karena itu, kolom genre perlu dipersiapkan agar bisa diubah menjadi representasi numerik melalui teknik vektorisasi seperti TF-IDF. Sehingga nantinya, dapat digunakan untuk menyusun sistem rekomendasi berdasarkan kemiripan genre.
 ### Pembersihan String Unik Kolom Name
 Beberapa judul anime mengandung karakter khusus, non alfabetik, atau spasi berlebih. Langkah pembersihan ini dilakukan untuk menghapus atau menormalisasi karakter-karakter tersebut agar tidak mempengaruhi hasil permodelan. TRansformasi yang dilakukan antara lain:
 - Menghapus karakter seperti !,? atau tanda berlebihan
