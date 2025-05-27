@@ -146,10 +146,8 @@ Ginga Eiyuu Densetsu : Drama Military Sci-Fi Space
 
 Sebagai metrik evaluasi, digunakan Root Mean Squared Error (RMSE) untuk mengukur sejauh mana prediksi model mendekati nilai target dalam skala aslinya. Model kemudian dilatih menggunakan data latih x_train dan y_train dengan batch size 8 selama 1 epoch, dan divalidasi menggunakan data x_val dan y_val. Meskipun hanya dilakukan pelatihan selama satu epoch untuk tahap awal, proses ini bertujuan untuk mengevaluasi kinerja awal model dan memastikan bahwa arsitektur dan pipeline pelatihan telah berjalan dengan benar sebelum melakukan pelatihan lebih lanjut. **Root Mean Squared Error (RMSE)** mengukur seberapa besar rata-rata kesalahan antara nilai yang diprediksi oleh model dan nilai aktual. RMSE memberikan penalti lebih besar untuk kesalahan prediksi yang besar karena penggunaan kuadrat dari selisih.
 
-### 📐 Formula:
-\[
-RMSE = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2}
-\]
+### 📐 Formula:\[
+RMSE = \sqrt{\frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2}\]
 **Keterangan:**
 - \( y_i \): rating aktual dari pengguna
 - \( \hat{y}_i \): rating yang diprediksi oleh model
