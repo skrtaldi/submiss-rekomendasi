@@ -80,7 +80,7 @@ Setelah melakukan pembersihan dan transformasi data pada tahap sebelumnya, dilak
 - genre : Kumpulan genre yang telah diproses agar dapat diubah menjadi vektor fitur
 Dataframe ini menjadi dasar utama dalam pengembangan sistem content-based, karena berisi seluruh informasi dari anime yang akan dibandingkan satu sama lain berdasarkan genrenya.
 ### Encode User_id
-Langkah-langkah yang dilkukan antara lain:
+Langkah-langkah yang dilakukan antara lain:
 - Membuat daftar unik user_id, dengan mengambil seluruh nilai unik dari kolom user_id dan menyusunnya dalam bentuk list. Hal ini dilakukan untuk memastikan tidak ada duplikasi saat melakukan mapping
 - Membuat Dictionary user_to_user_encoded yang memetakan setiap user_id ke angka unik yang dimulai dari 0
 -Membuat Reverse Mapping untuk mengembalikan angka hasil encoding ke  user_id aslinya.
