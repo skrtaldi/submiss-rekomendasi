@@ -147,57 +147,57 @@ Model sistem rekomendasi tahap ini dibangun menggunakan pendekatan deep learning
 
 Sistem ini memanfaatkan data interaksi pengguna dan anime dalam bentuk rating, kemudian menghitung kemiripan antar pengguna untuk memberikan rekomendasi berdasarkan pola perilaku yang serupa. Top-N anime yang ditampilkan merupakan hasil dari prediksi preferensi pengguna berdasarkan kesamaan dengan pengguna atau anime lain. Kelebihan pendekatn ini adalah kemampuannya menemukan rekomendasia yang lebih bergam dan tidak terbatas pada konten serupa. Namun kelemhan utam metode ini adalah ketergantungannya pada data interaksi yang cukup besar. Jika terdapat pengguna atau item baru yang belum memiliki riwayat interaksi, sistem ini akan mengalami kesulitan memberikan rekomendasi yang akurat(cold-start).
 
-## Showing Recommendations for User: 8643
+## Showing Recommendations for User: 46109
 
 ## Anime with High Ratings from User
 Berikut adalah daftar anime yang mendapatkan rating tinggi dari pengguna:
 
-- **Naruto**  
-  *Genres:* Action, Comedy, Martial Arts, Shounen, Super Power
+- **Mononoke Hime**  
+  *Genres:* Action Adventure Fantasy
 
-- **Steins;Gate Movie: Fuka Ryouiki no Déjà vu**  
-  *Genres:* Sci-Fi, Thriller
+- **Sakamichi no Apollon**  
+  *Genres:*  : Drama Josei Music Romance School
 
-- **Mirai Nikki (TV)**  
-  *Genres:* Action, Mystery, Psychological, Shounen, Supernatural, Thriller
+- **Cowboy Bebop**  
+  *Genres:* Action, Adventure, Comedy, Drana, Sci-fi, Space
 
-- **Bakemonogatari**  
-  *Genres:* Mystery, Romance, Supernatural, Vampire
+- **Ghost in the Shell Stand Alone Complex**  
+  *Genres:* Action Mecha Military Police Sci-Fi Seinen
 
-- **Suzumiya Haruhi no Shoushitsu**  
-  *Genres:* Comedy, Mystery, Romance, School, Sci-Fi, Supernatural
+- **Cowboy Bebop Tengoku no Tobira**  
+  *Genres:* Action Drama Mystery Sci-Fi Space
 
 ---
 
 ## Top 10 Anime Recommendations
 Berikut adalah rekomendasi anime terbaik untuk pengguna:
 
-1. **Fullmetal Alchemist: Brotherhood**  
-   *Genres:* Action, Adventure, Drama, Fantasy, Magic, Military, Shounen
-
-2. **Gintama**  
+1. **Gintama**  
    *Genres:* Action, Comedy, Historical, Parody, Samurai, Sci-Fi, Shounen
 
-3. **Gintama°**  
+2. **Shigatsu wa Kimi no Uso**  
+   *Genres:* Action, Adventure, Drama, Music, Romance, School, Shounen
+
+3. **Gintama039**  
    *Genres:* Action, Comedy, Historical, Parody, Samurai, Sci-Fi, Shounen
 
-4. **Gintama Movie: Kanketsu-hen - Yorozuya yo Eien Nare**  
-   *Genres:* Action, Comedy, Historical, Parody, Samurai, Sci-Fi, Shounen
-
-5. **Gintama°: Enchousen**  
-   *Genres:* Action, Comedy, Historical, Parody, Samurai, Sci-Fi, Shounen
-
-6. **Hunter x Hunter (2011)**  
+4. **Hunter x Himter 2011**  
    *Genres:* Action, Adventure, Shounen, Super Power
+
+5. **Haikyuu Karasuno Koukou VS Shiratorizawa Gakuen Koukou**  
+   *Genres:* Comedy, Drama, School, Shounen, Sports
+
+6. **Mushishi : Adventure Fantasy Historical Mystery Seinen Slice of Life Supernatural**  
+   *Genres:* Adventure, Fantasy, Historical, Mystery, Seinen, Slice of Life, Supernatural
 
 7. **Rurouni Kenshin: Meiji Kenkaku Romantan - Tsuiokuhen**  
    *Genres:* Action, Drama, Historical, Martial Arts, Romance, Samurai
 
-8. **Haikyuu!!: Karasuno Koukou VS Shiratorizawa Gakuen Koukou**  
-   *Genres:* Comedy, Drama, School, Shounen, Sports
+8. **Kimi no Na wa : Drama Romance School Supernatural**  
+   *Genres:* Drama, Romance, School, Supernatural
 
-9. **Gintama**  
-   *Genres:* Action, Comedy, Historical, Parody, Samurai, Sci-Fi, Shounen
+9. **Aria The Origination**  
+   *Genres:* Fantasy, Sci-Fi, Shounen, Slice of Life
 
 10. **Ginga Eiyuu Densetsu**  
     *Genres:* Drama, Military, Sci-Fi, Space
@@ -220,9 +220,9 @@ Semakin kecil nilai RMSE, maka semakin dekat prediksi model dengan nilai aktual.
 
 Epoch | Loss (Train) | RMSE (Train) | Val Loss | RMSE (Val) |
 |-------|--------------|--------------|----------|------------|
-| 1     | 0.4849       | 0.1229       | 0.4758   | 0.1116     |
+| 1     | 0.4963      | 0.1387       | 0.4759   | 0.1117     |
 
-Training RMSE sebesar 0.1229 menunjukkan bahwa model mampu mempelajari pola data dengan cukup baik dalam 1 epoch pelatihan. Validation RMSE sebesar 0.1116 menunjukkan generalisasi model terhadap data yang belum pernah dilihat cukup baik, dengan error prediksi yang relatif rendah.
+Training RMSE sebesar 0.1229 menunjukkan bahwa model mampu mempelajari pola data dengan cukup baik dalam 1 epoch pelatihan. Validation RMSE sebesar 0.1117 menunjukkan generalisasi model terhadap data yang belum pernah dilihat cukup baik, dengan error prediksi yang relatif rendah.
 
 ## Referensi
 - [^1] Ardiansyah, R., Ari Bianto, M., & Saputra, B. D. (2023). Sistem Rekomendasi Buku Perpustakaan Sekolah menggunakan Metode Content-Based Filtering. Jurnal CoSciTech (Computer Science and Information Technology), 4(2), 510-518.
