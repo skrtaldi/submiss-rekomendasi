@@ -211,6 +211,10 @@ $$
 $$
 
 **Keterangan:**
+- Rating aktual dari pengguna: $y_i$  
+- Rating yang diprediksi oleh model: $\hat{y}_i$  
+- Jumlah total prediksi: $n$
+
 - \(y_i\): rating aktual dari pengguna  
 - \(\hat{y}_i\): rating yang diprediksi oleh model  
 - \(n\): jumlah total prediksi
