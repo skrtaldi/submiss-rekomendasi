@@ -14,20 +14,20 @@ Setelah memahami latar belakang dan pentingnya permasalahan yang ingin diselesai
 
 ### Goals
 - Menganalisis dataset anime yang tersedia untuk memahami struktut dan karakteristik data
-- Membangun model content-based filtering, yang merekemdasikan anime berdasarkan genre dari anime tersebut.
+- Membangun model content-based filtering, yang merekomdasikan anime berdasarkan genre dari anime tersebut.
 - Membangun model collaborative filtering, yang memanfaatkan data interaksi atau rating pengguna untuk menemukan anime yang disukai pengguna dengan preferensi yang serupa.
-- Menguji dan membandingkan performa kedua pendekatan dalam memberikan rekomendasi yang relevan untuk konteks pengguna.
-- Menyediakan rekomendasi yang lebih personal dan efisien bagi mahasiswa, agar dapat menemukan tontonan berkualitas tanpa membuang waktu untuk mencari.
+- Menguji performa pendekatan collaborative filtering dalam memberikan rekomendasi yang relevan untuk konteks pengguna.
+- Menyediakan rekomendasi yang lebih personal dan efisien bagi pengguna, agar dapat menemukan tontonan berkualitas tanpa membuang waktu untuk mencari.
 
 ### Solution statements
-Untuk mencapai tujuan proyek dalam menyediakan sistem rekomdasi anime yang relevan bagi mahasiswa, dua pendekatan algoritma digunakan yaitu, conten based filtering dan collaborative filtering.
+Untuk mencapai tujuan proyek dalam menyediakan sistem rekomdasi anime yang relevan bagi pengguna, dua pendekatan algoritma digunakan yaitu, conten based filtering dan collaborative filtering.
 - Content Based Filtering, pendekatan ini merekomendasikan anime berdasarkan kemiripan konten, seperti genre, tipe dan nama anime. Sistem ini mengasumsikan bahwa pengguna akan menyukai anime yang memiliki karakteristik serupa dengan yang sebelumnya disukai.
-- Collaborative Filtering, pendekayan ini memanfaatkan data rating pengguna untuk merekomendasikan anime. Dalam proyek ini digunakan collaborative filtering berbasis kemiripan anyat anime, jika penguna menyukai anime A, maka sistem akan mencari anime B yang disukai oleh pengguna lain dengan pola yang mirip.
-- Menggunakan metrik Root Mean Squared Error (RMSE) yang mengukur seberapa besar perbedaan antara rating yang diprediksi oleh sistem dengan rating aktual dari pengguna.
+- Collaborative Filtering, pendekatan ini memanfaatkan data rating pengguna untuk merekomendasikan anime. Dalam proyek ini digunakan collaborative filtering berbasis kemiripan anyat anime, jika penguna menyukai anime A, maka sistem akan mencari anime B yang disukai oleh pengguna lain dengan pola yang mirip.
+- Menggunakan metrik Root Mean Squared Error (RMSE) pada pendekatan collaborative filtering yang mengukur seberapa besar perbedaan antara rating yang diprediksi oleh sistem dengan rating aktual dari pengguna.
 - Dengan mengeimplementasikan kedua pendekatan ini, sistem dapat dibandingkan dari segi relevansi hasil, performa, dan keterbatasannya masing-masing.
 
 ## Data Understanding
-Proyek ini menggunakan dua dataset utama yang berkaitan dnegan anime dan interaksi pengguna yaitu anime dan rating yang berkestensi csv. Dataset anime memiliki total 12293 entri dan 7 kolom yang berisi informasi metadata anime seperti anime_id, nama, genre, tipe, episodes, rating, dan members, digunakan untuk content based filtering. Pada dataset anime kolom genre memiliki 62 missing values, kolom type memiliki 25 missing values dan kolom rating memiliki total 230 missing. Sedangkan kolom anime_id, name, episodes dan members memiliki 0 missing values. Dataset rating memiliki total 7813736 entri dan 3 kolom yaitu user_id, anime_id dan rating, digunakan untun collaborative filtering. Pada dataset rating kolom user_id, anime_id dan rating memiliki 0 missing values. Akan tetapi pada kolom rating pada dataset ini terdapat sebuah outlier -1 yang menandakan bahwa anime dengan id tersebut tidak memiliki rating oleh user. Dataset ini dapat diunduh dan dieksplorasi lebih lanjut melalui tautan [Kaggle](https://www.kaggle.com/datasets/CooperUnion/anime-recommendations-database/data).
+Proyek ini menggunakan dua dataset utama yang berkaitan dnegan anime dan interaksi pengguna yaitu anime dan rating yang berkestensi csv. Dataset anime memiliki total 12294 entri dan 7 kolom yang berisi informasi metadata anime seperti anime_id, nama, genre, tipe, episodes, rating, dan members, digunakan untuk content based filtering. Pada dataset anime kolom genre memiliki 62 missing values, kolom type memiliki 25 missing values dan kolom rating memiliki total 230 missing. Sedangkan kolom anime_id, name, episodes dan members memiliki 0 missing values. Dataset rating memiliki total 7813737 entri dan 3 kolom yaitu user_id, anime_id dan rating, digunakan untun collaborative filtering. Pada dataset rating kolom user_id, anime_id dan rating memiliki 0 missing values. Akan tetapi pada kolom rating pada dataset ini terdapat sebuah outlier -1 yang menandakan bahwa anime dengan id tersebut tidak memiliki rating oleh user. Dataset ini dapat diunduh dan dieksplorasi lebih lanjut melalui tautan [Kaggle](https://www.kaggle.com/datasets/CooperUnion/anime-recommendations-database/data).
 
 ### Variabel-variabel anime.csv adalah sebagai berikut:
 - anime_id : merupakan id unik untuk setiap judul anime yang dimiliki oleh myanimelist.net
@@ -203,8 +203,7 @@ Berikut adalah rekomendasi anime terbaik untuk pengguna:
     *Genres:* Drama, Military, Sci-Fi, Space
 
 ## Evaluation
-
-Sebagai metrik evaluasi, digunakan Root Mean Squared Error (RMSE) untuk mengukur sejauh mana prediksi model mendekati nilai target dalam skala aslinya. Model kemudian dilatih menggunakan data latih x_train dan y_train dengan batch size 8 selama 1 epoch, dan divalidasi menggunakan data x_val dan y_val. Meskipun hanya dilakukan pelatihan selama satu epoch untuk tahap awal, proses ini bertujuan untuk mengevaluasi kinerja awal model dan memastikan bahwa arsitektur dan pipeline pelatihan telah berjalan dengan benar sebelum melakukan pelatihan lebih lanjut. **Root Mean Squared Error (RMSE)** mengukur seberapa besar rata-rata kesalahan antara nilai yang diprediksi oleh model dan nilai aktual. RMSE memberikan penalti lebih besar untuk kesalahan prediksi yang besar karena penggunaan kuadrat dari selisih.
+Sebagai metrik evaluasi pada pendekatan collaborative filtering, digunakan Root Mean Squared Error (RMSE) untuk mengukur sejauh mana prediksi model mendekati nilai target dalam skala aslinya. Model kemudian dilatih menggunakan data latih x_train dan y_train dengan batch size 8 selama 1 epoch, dan divalidasi menggunakan data x_val dan y_val. Meskipun hanya dilakukan pelatihan selama satu epoch untuk tahap awal, proses ini bertujuan untuk mengevaluasi kinerja awal model dan memastikan bahwa arsitektur dan pipeline pelatihan telah berjalan dengan benar sebelum melakukan pelatihan lebih lanjut. **Root Mean Squared Error (RMSE)** mengukur seberapa besar rata-rata kesalahan antara nilai yang diprediksi oleh model dan nilai aktual. RMSE memberikan penalti lebih besar untuk kesalahan prediksi yang besar karena penggunaan kuadrat dari selisih.
 
 ### Formula
 $$
@@ -223,6 +222,8 @@ Epoch | Loss (Train) | RMSE (Train) | Val Loss | RMSE (Val) |
 | 1     | 0.4963      | 0.1387       | 0.4759   | 0.1117     |
 
 Training RMSE sebesar 0.1229 menunjukkan bahwa model mampu mempelajari pola data dengan cukup baik dalam 1 epoch pelatihan. Validation RMSE sebesar 0.1117 menunjukkan generalisasi model terhadap data yang belum pernah dilihat cukup baik, dengan error prediksi yang relatif rendah.
+
+Evaluasi model rekomendasi hanya dilakukan pada pendekatan collaborative filtering karena pendekatan ini mempelajari dan memprediksi preferensi pengguna berdasarkan pola interaksi. Sedangkan content based filtering tidak mempelaari pola interaksi pengguna, melainkan hanya menyarankan item yag memiliki kemiripan konten(genre) dengan item yang pernah disukai. Karena itu model ini bersifat heuristik, dan tidak melakukan preferensi secara eksplisit. Hal ini membuat evaluasi numerik terhadap performa model content-based filtering menjadi kurang tepat. Pada pendekatan conten-based filtering, sistem hanya akan melihat seberapa mirip suatu item terhadap item lain yang pernah disukai oleh pengguna, tanpa mempertimbangkan apakah pengguna benar-benar akan menyukai item tersebut di masa depan. Oleh karena itu, metriks evaluasi numerik bisa menyesatkan, karena hasil yang terlihat mirip belum tentu berarti disukai.
 
 ## Referensi
 - [^1] Ardiansyah, R., Ari Bianto, M., & Saputra, B. D. (2023). Sistem Rekomendasi Buku Perpustakaan Sekolah menggunakan Metode Content-Based Filtering. Jurnal CoSciTech (Computer Science and Information Technology), 4(2), 510-518.
